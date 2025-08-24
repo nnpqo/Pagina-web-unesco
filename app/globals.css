@@ -1,0 +1,82 @@
+:root {
+  --bg: #0b1020;
+  --card: #101633;
+  --text: #e6e8ef;
+  --muted: #a8b0c3;
+  --accent: #5aa9f8;
+  --danger: #ef4444;
+  --warn: #f59e0b;
+  --ok: #10b981;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 10% 10%, #131b3d, var(--bg));
+  color: var(--text);
+}
+a { color: var(--accent); text-decoration: none; }
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.card {
+  background: linear-gradient(180deg, #151c3f, #0e1430);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.title { font-size: 1.9rem; margin: 0 0 0.25rem; }
+.subtitle { margin: 0 0 1rem; color: var(--muted); }
+.grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .grid { grid-template-columns: 2fr 1fr; } }
+label { font-weight: 600; display: block; margin-bottom: 0.35rem; }
+input, textarea {
+  width: 100%;
+  background: #0b1128;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  outline: none;
+}
+textarea { min-height: 160px; resize: vertical; }
+button {
+  border: none;
+  background: linear-gradient(135deg, #5aa9f8, #8ab4ff);
+  color: #0b1020;
+  font-weight: 800;
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .05s ease, box-shadow .2s ease;
+  box-shadow: 0 6px 18px rgba(90,169,248,0.35);
+}
+button:hover { transform: translateY(-1px); }
+button:active { transform: translateY(0); }
+.flags { margin-top: 0.75rem; color: var(--muted); font-size: 0.95rem; }
+.meter {
+  height: 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.meter-fill {
+  height: 100%;
+  width: 0%;
+  transition: width .35s ease;
+  background: linear-gradient(90deg, #ef4444, #f59e0b, #10b981);
+}
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  font-size: .85rem;
+}
+.tips li { margin-bottom: .4rem; }
