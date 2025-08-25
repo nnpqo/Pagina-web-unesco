@@ -3,12 +3,14 @@
 import { useState } from "react";
 import { evaluate } from "@/lib/scoring";
 import Tips from "@/components/Tips";
+import VideoModal from "@/components/videoModal";
 
 export default function Page() {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [result, setResult] = useState<{score:number; label:string; flags:string[]}|null>(null);
   const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
 
   async function onEvaluateClient() {
     setLoading(true);
@@ -86,6 +88,19 @@ export default function Page() {
           <Tips/>
         </aside>
       </div>
+      <button
+        onClick={() => setOpen(true)}
+      >
+        Ver video
+      </button>
+
+      <VideoModal
+        open={open}
+        onClose={() => setOpen(false)}
+        srcVideo="/videos/theNewIsTrue.mp4"
+        srcWeb=""
+        level={1}            
+      />
     </div>
   );
 }
